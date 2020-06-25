@@ -1,15 +1,15 @@
 Bootstrap: docker
-From: ubuntu:18.04
+From: ubuntu:20.04
 
 %help
 
-    Spades 3.13.0
+    Spades 3.14.1
     http://cab.spbu.ru/software/spades/
 
 %labels
 
     MAINTAINER "Tom Harrop"
-    VERSION "Spades 3.13.0"
+    VERSION "Spades 3.14.1"
 
 %post
 
@@ -27,7 +27,7 @@ From: ubuntu:18.04
     # install Spades
     wget -O "spades.tar.gz" \
         --no-check-certificate \
-        http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0.tar.gz
+        http://cab.spbu.ru/files/release3.14.1/SPAdes-3.14.1.tar.gz
     mkdir spades
     tar -zxf spades.tar.gz \
         -C spades \
