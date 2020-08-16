@@ -1,21 +1,23 @@
 Bootstrap: shub
-From: TomHarrop/singularity-containers:samtools_1.9
+From: TomHarrop/align-utils:samtools_1.10
 
 %help
-    Container for BBMap 38.76
+    Container for BBMap 38.86
     https://jgi.doe.gov/data-and-tools/bbtools/
 
 %labels
     MAINTAINER "Tom Harrop"
-    VERSION "BBMap 38.76"
+    VERSION "BBMap 38.86"
 
 %post
-    apk add --update \
+    apt-get update
+    apt-get install -y \
+        default-jre-headless \
         gawk \
-        openjdk8
-
+        pigz
+     
     wget -O "bbmap.tar.gz" \
-        "https://sourceforge.net/projects/bbmap/files/BBMap_38.76.tar.gz"
+        "https://sourceforge.net/projects/bbmap/files/BBMap_38.86.tar.gz/download"
     mkdir bbmap-install
     tar -zxf bbmap.tar.gz \
         -C bbmap-install \
